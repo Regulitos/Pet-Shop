@@ -3,6 +3,8 @@ import jackRussel from './img/jackRussel.jpg';
 import foxTerrier from './img/foxTerrier.jpg';
 import pekines from './img/pekines.jpg';
 import pomerania from './img/pomerania.jpg';
+import ratTerrier from './img/ratTerrier.jpg';
+import bichonMaltes from './img/bichonMaltes.jpg';
 
 export default [
     {   id:1,
@@ -38,5 +40,19 @@ export default [
         description: "Otra de las razas de perros pequeños más conocidas es el pomerania. ¿Sabías que son originarios del Ártico y que su función era acarrear los trineos? Eso sí, no era un perro pequeño –llamado toy–, como ahora, sino que era de gran tamaño. ",
         image: pomerania,
         precio: "$6.000.000"
+    },
+    {
+        id:6,
+        specie: "Rat Terrier",
+        description: "Es una raza de perro originaria de los Estados Unidos, reconocida por su inteligencia y vitalidad. Estos perros, de tamaño pequeño a mediano, presentan un pelaje corto y a menudo tienen la cola cortada. Son hábiles cazadores de roedores y destacan en diversas actividades caninas. ",
+        image: ratTerrier,
+        precio: "$2.000.000"
+    },
+    {
+        id:7,
+        specie: "Bichon Maltes",
+        description: "Es uno de los perros más antiguos, y es que hace 3.000 años ya acompañaba a los romanos. Tiene un carácter muy cariñoso y juguetón y se adiestra con facilidad, lo que favorece que sea un perro ideal para estar con niños. Su personalidad eschispeante y alegre, y son sociales, confiados, ¡y muy atentos!",
+        image: bichonMaltes,
+        precio: "$15.000.000"
     }
 ]
