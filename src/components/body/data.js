@@ -5,6 +5,9 @@ import pekines from './img/pekines.jpg';
 import pomerania from './img/pomerania.jpg';
 import ratTerrier from './img/ratTerrier.jpg';
 import bichonMaltes from './img/bichonMaltes.jpg';
+import beagle from './img/beagle.jpg';
+import caniche from './img/caniche.jpg';
+import bulldogFrances from './img/bulldogFrances.jpg';
 
 export default [
     {   id:1,
@@ -54,5 +57,27 @@ export default [
         description: "Es uno de los perros más antiguos, y es que hace 3.000 años ya acompañaba a los romanos. Tiene un carácter muy cariñoso y juguetón y se adiestra con facilidad, lo que favorece que sea un perro ideal para estar con niños. Su personalidad eschispeante y alegre, y son sociales, confiados, ¡y muy atentos!",
         image: bichonMaltes,
         precio: "$15.000.000"
+    
+    },
+    {
+        id:8,
+        specie: "Beagle",
+        description: "Se puede considerar un perro pequeño que podría encajar también en perros medianos y, además, es un perro que, en sus orígenes, era de caza. Destaca por su carácter juguetón, extrovertido, cariñoso y fiel. Hay dos tipos, el beagle inglés y el americano, y la principal diferencia entre ambos es el tamaño.",
+        image: beagle,
+        precio: "$2.000.000"
+    },
+    {
+        id:9,
+        specie: "Caniche",
+        description: "Destaca, sobre todo, por su inteligencia. Es un perro fiel, juguetón, familiar y es ideal para tener con niños. ¡Serán mejores amigos! Su versión toy no es de los más pequeños, pero es un perro perfecto para tener en pisos y espacios pequeños. ",
+        image: caniche,
+        precio: "$2.000.000"
+    },
+    {
+        id:10,
+        specie: "Bulldog Frances",
+        description: "Tiene como característica principal sus orejas de estilo murciélago. Además, suelen tener el cuerpo muy musculado. A pesar de su estética atlética, no son buenos compañeros para aquellos a los que les gusta hacer running, más bien al contrario.",
+        image: bulldogFrances,
+        precio: "$1.800.000"
     }
 ]

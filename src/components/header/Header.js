@@ -39,10 +39,12 @@ function Header() {
                                     <a className="nav-link" href="#">Registrarse</a>
                                 </li>
                             </Link>
-                            <li className="nav-item">
-                                <LoginIcon />
-                                <a className="nav-link" href="#">Iniciar Sesion</a>
-                            </li>
+                            <Link to='/inicio-sesion'>
+                                <li className="nav-item">
+                                    <LoginIcon />
+                                    <a className="nav-link" href="#">Iniciar Sesion</a>
+                                </li>
+                            </Link>
                         </ul>
                         <form className="d-flex" role="search">
                             < SearchIcon className='searchIcon' />
