@@ -57,6 +57,7 @@ function Registro() {
             }));
         }
 
+        const regexNombre = /^(?=.*[\p{L}]{3})[\p{L}\s'áéíóúÁÉÍÓÚüÜñÑ]+$/u;
         //Validaciones de Nombre
         console.log(formData.nombre);
         if (formData.nombre === "") {
@@ -65,19 +66,31 @@ function Registro() {
                 nameError: "Por favor, complete este campo."
             }));
             error = true;
+        }else if(!regexNombre.test(formData.nombre)){
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                nameError: "El nombre Insertado no es valido."
+            }));
+            error = true;
         } else {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 nameError: "",
             }));
         }
-
+        
         //Validacion de Apellido
         console.log(formData.apellido);
         if (formData.apellido === "") {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 lastError: "Por favor, complete este campo."
+            }));
+            error = true;
+        }else if(!regexNombre.test(formData.apellido)){
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                lastError: "El nombre Insertado no es valido."
             }));
             error = true;
         } else {
@@ -87,6 +100,7 @@ function Registro() {
             }));
         }
 
+        const regexCorreo = /^[\w.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         //Validacion de correo
         console.log(formData.email);
         if (formData.email === "") {
