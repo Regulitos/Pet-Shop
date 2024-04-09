@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import Swal from "sweetalert2";
 import './registro.css';
 
 function Registro() {
+    const form = useRef();
     const [formData, setFormData] = useState({
         identificacion: "",
         nombre: "",
@@ -57,12 +59,19 @@ function Registro() {
             }));
         }
 
+        const regexNombre = /^(?=.*[\p{L}]{3})[\p{L}\s'áéíóúÁÉÍÓÚüÜñÑ]+$/u;
         //Validaciones de Nombre
         console.log(formData.nombre);
         if (formData.nombre === "") {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 nameError: "Por favor, complete este campo."
+            }));
+            error = true;
+        }else if(!regexNombre.test(formData.nombre)){
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                nameError: "Nombre invalido, intentalo de nuevo."
             }));
             error = true;
         } else {
@@ -80,6 +89,12 @@ function Registro() {
                 lastError: "Por favor, complete este campo."
             }));
             error = true;
+        }else if(!regexNombre.test(formData.apellido)){
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                lastErrorError: "Nombre invalido, intentalo de nuevo."
+            }));
+            error = true;
         } else {
             setErrors(prevErrors => ({
                 ...prevErrors,
@@ -87,12 +102,20 @@ function Registro() {
             }));
         }
 
+        const regexEmail = /^[\w.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        
         //Validacion de correo
         console.log(formData.email);
         if (formData.email === "") {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 emailError: "Por favor, complete este campo."
+            }));
+            error = true;
+        }else if(!regexEmail.test(formData.email)){
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                emailError: "Correo invalido, intentalo de nuevo."
             }));
             error = true;
         } else {
@@ -102,12 +125,19 @@ function Registro() {
             }));
         }
 
+        const regexDireccion = /^(?:[a-zA-Z0-9\s\.,#\-]+|Calle\s\d+\scon\scarrera\s\d+)$/;
         //Validacion de Direccion
         console.log(formData.direccion);
         if (formData.direccion === "") {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 dirError: "Por favor, complete este campo."
+            }));
+            error = true;
+        }else if(!regexDireccion.test(formData.direccion)){
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                dirError: "Direccion invalida, intentelo de nuevo."
             }));
             error = true;
         } else {
@@ -147,10 +177,23 @@ function Registro() {
             }));
             error = true;
         } else {
-            setErrors(prevErrors => ({
-                ...prevErrors,
-                fechaError: "",
-            }));
+            const fechaNacimiento = new Date(formData.fecha);
+            const fechaActual = new Date();
+            
+            const edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+            
+            if (edad <= 16) {
+                setErrors(prevErrors => ({
+                    ...prevErrors,
+                    fechaError: "Debe ser mayor de 16 años para continuar."
+                }));
+                error = true;
+            } else {
+                setErrors(prevErrors => ({
+                    ...prevErrors,
+                    fechaError: "",
+                }));
+            }
         }
 
         //Validacion de Contraseña 
@@ -186,9 +229,48 @@ function Registro() {
         if (error) {
             return;
         }
-        alert("Datos enviados con exito");
-        console.log("Datos enviados:", formData);
-    };
+
+
+        fetch("http://localhost:3001/registro-usuario", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(formData),
+          })
+            .then((response) => {
+              if (response.status === 200) {
+                // alert("Usuario creado con éxito")
+                Swal.fire({
+                  title: "Usuario creado con éxito",
+                  icon: "success",
+                });
+                form.current.reset();
+                window.location.hash = "/login";
+              }
+              if (response.status === 400) {
+                //alert(" + response.status)
+                Swal.fire({
+                  title:
+                    "No fue posible crear el usuario porque ya existe el correo ingresado " +
+                    formData.email,
+                  icon: "warning",
+                });
+              }
+            })
+            .catch((error) => {
+              alert("No fue posible finalizar el proceso de registro por un error " + error)
+              Swal.fire({
+                title:
+                  "No fue posible finalizar el proceso de registro por un error interno del servidor ",
+                icon: "error",
+              });
+            });
+        };
+
+       
+
 
     return (
         <div className="registro-container">

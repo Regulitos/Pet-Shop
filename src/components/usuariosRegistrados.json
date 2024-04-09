@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "identificacion": "123141343432432",
+        "nombres": "Juan",
+        "apellidos": "Monhcdah",
+        "email": "garciajuandavid1999@gmail.pe",
+        "direccion": "1531158465",
+        "telefono": "12345678",
+        "fechaNacimiento": "2003-02-11",
+        "password": "Darkusninja@1",
+        "estado": "activo",
+        "rol": "Usuario",
+        "fecha_creación": "2024-04-09T21:06:21.008Z"
+    },
+    {
+        "id": 2,
+        "estado": "activo",
+        "rol": "Usuario",
+        "fecha_creación": "2024-04-09T21:06:57.819Z"
+    },
+    {
+        "id": 3,
+        "identificacion": "123141343432432",
+        "nombres": "Juan",
+        "apellidos": "Monhcdah",
+        "email": "garciajuandavid1999@gmail.com",
+        "direccion": "1531158465",
+        "telefono": "12345678",
+        "fechaNacimiento": "2005-02-09",
+        "password": "Darkusninja@1",
+        "estado": "activo",
+        "rol": "Usuario",
+        "fecha_creación": "2024-04-09T21:07:50.354Z"
+    }
+]
