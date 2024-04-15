@@ -18,6 +18,8 @@ const controller = {
                 apellidos: req.body.apellido,
                 email: req.body.email,
                 direccion: req.body.direccion,
+                ciudad: req.body.ciudad,
+                departamento: req.body.depto,
                 telefono: req.body.telefono,
                 fechaNacimiento: req.body.fecha,
                 password: req.body.password,

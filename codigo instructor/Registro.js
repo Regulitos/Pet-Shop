@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState , useEffect } from "react";
 import Swal from "sweetalert2";
 import "./Registro.css";
 import colombia from "./colombia";
