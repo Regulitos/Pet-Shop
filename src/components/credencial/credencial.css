@@ -1,0 +1,29 @@
+/* Estilo para el contenedor principal */
+.container {
+    margin-top: 20px;
+  }
+  
+  /* Estilo para la lista nav */
+  .nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Estilo para los elementos de la lista nav */
+  .nav-item {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  /* Estilo para el texto de bienvenida */
+  .bienvenido {
+    font-weight: bold;
+  }
+  
+  /* Estilo para los nombres y apellidos */
+  .nombre-apellido {
+    font-size: 18px;
+    color: #333;
+  }
+  

@@ -30,5 +30,21 @@
         "estado": "activo",
         "rol": "Usuario",
         "fecha_creación": "2024-04-15T20:10:13.472Z"
+    },
+    {
+        "id": 3,
+        "identificacion": "123141343432432",
+        "nombres": "Juan",
+        "apellidos": "Monhcdah",
+        "email": "garciajuandavid1999@gmail.pe",
+        "direccion": "1531158465",
+        "ciudad": "Pereira",
+        "departamento": "Risaralda",
+        "telefono": "357844124",
+        "fechaNacimiento": "2005-06-22",
+        "password": "Darkusninja@1",
+        "estado": "activo",
+        "rol": "Usuario",
+        "fecha_creación": "2024-04-22T18:59:10.070Z"
     }
 ]

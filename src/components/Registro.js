@@ -285,7 +285,7 @@ function Registro() {
                         icon: "success",
                     });
                     form.current.reset();
-                    window.location.hash = "/login";
+                    window.location.hash = "/inicio-sesion";
                 }
                 if (response.status === 400) {
                     //alert(" + response.status)
