@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Footer(){
+function Footer() {
     return (
         <footer class="text-center text-lg-start bg-light text-muted">
 
@@ -15,22 +15,22 @@ function Footer(){
 
                 <div>
                     <a href="" class="me-4 text-reset">
-                       
+
                     </a>
                     <a href="" class="me-4 text-reset">
-                        
+
                     </a>
                     <a href="" class="me-4 text-reset">
-                        
+
                     </a>
                     <a href="" class="me-4 text-reset">
-                       
+
                     </a>
                     <a href="" class="me-4 text-reset">
-                        
+
                     </a>
                     <a href="" class="me-4 text-reset">
-                        
+
                     </a>
                 </div>
 
@@ -46,11 +46,11 @@ function Footer(){
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
                             <h6 class="text-uppercase fw-bold mb-4">
-                                <i class="fas fa-gem me-3"></i>Company name
+                                <i class="fas fa-gem me-3"></i>Globant
                             </h6>
                             <p>
-                                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                dolor sit amet, consectetur adipisicing elit.
+                                As a digitally native company, we are passionate about the way tech can change industries, experiences, and lives.
+                                <br/><br/>That’s why, for the last 20 years, we have been dedicated to creating digital products that consumers love. We dare to go far, we dare to delight.
                             </p>
                         </div>
 

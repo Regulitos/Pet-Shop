@@ -1,14 +1,32 @@
-.logo{
-    width: 8%;
-
+/* Estilos para pantallas grandes */
+.contenedor {
+    border-radius: 10px; /* Aumenta el radio de borde para que se vea mejor */
+    box-shadow: rgba(84, 129, 80, 0.25) 0px 10px 10px, rgba(77, 53, 53, 0.12) 0px -6px 15px, rgba(136, 145, 90, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.17) 0px 6px 7px, rgba(0, 0, 0, 0.09) 0px -2px 3px;
+    margin: 2% auto; /* Centra el contenedor horizontalmente y agrega un pequeño espacio en la parte superior e inferior */
+    padding: 20px; /* Agrega espacio interno para que el contenido no esté pegado a los bordes */
+    max-width: 90%; /* Establece el ancho máximo del contenedor */
 }
 
-.contenedor{
-    border-radius: 1%;
-    box-shadow: rgba(84, 129, 80, 0.25) 0px 54px 55px, rgba(77, 53, 53, 0.12) 0px -12px 30px, rgba(136, 145, 90, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    margin: 2% 1% 0% 1%;
+.logo {
+    width: 100px; /* Establece un ancho fijo para el logo */
 }
 
-.searchIcon{
-    margin-top: 5px;
+.searchIcon {
+    margin-top: 10px; /* Ajusta la posición vertical del icono de búsqueda */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenedor {
+        margin: 2% auto; /* Centra el contenedor horizontalmente y agrega un pequeño espacio en la parte superior e inferior */
+        padding: 10px; /* Reduce el espacio interno para dispositivos más pequeños */
+    }
+
+    .logo {
+        width: 80px; /* Reduzca ligeramente el tamaño del logo en dispositivos más pequeños */
+    }
+
+    .searchIcon {
+        margin-top: 5px; /* Ajusta ligeramente la posición vertical del icono de búsqueda */
+    }
 }

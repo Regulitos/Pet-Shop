@@ -1,16 +1,35 @@
 .container-fluid {
-    height: 50%;
-    width: 100%;
-  }
-  
-  .carousel-inner img {
-    height: auto;
-    max-height:500px;
-    width: auto;
-    max-width: 900px;
-  }
+    height: 100% !important; /* Cambia la altura a automático para que se ajuste al contenido */
+    width: 100% !important;
+    padding: 0; /* Elimina el relleno para evitar espacios innecesarios */
+}
 
-  .carousel{
-    margin: 2% ;
-    background-color:none;
-  }
+.carousel-inner img {
+    max-width:900px; /* Ajusta el ancho máximo de la imagen al contenedor */
+    max-height:600px; /* Ajusta la altura máxima de la imagen al contenedor */
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor sin recortarla */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.carousel {
+    margin: 2% auto !important; /* Centra el carrusel horizontalmente y agrega un pequeño espacio en la parte superior e inferior */
+    background-color: none !important; /* Elimina el color de fondo */
+}
+
+.carousel-inner {
+    position: relative;
+    height: 600px; /* Limita la altura del carrusel */
+}
+
+/* Media queries para ajustar el tamaño del carrusel en dispositivos más pequeños */
+@media (max-width: 768px) {
+    .carousel-inner {
+        height: 400px; /* Reduce la altura máxima en dispositivos medianos */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-inner {
+        height: 300px; /* Reduce aún más la altura máxima en dispositivos pequeños */
+    }
+}
