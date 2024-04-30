@@ -9,6 +9,7 @@ function Credencial() {
     const ultimaEntrada = user[user.length - 1];
     const nombre = ultimaEntrada.nombres;
     const apellido = ultimaEntrada.apellidos;
+    const email = ultimaEntrada.email;
 
     return (
         <div className="container">
@@ -21,6 +22,9 @@ function Credencial() {
                 </li>
                 <li className="nav-item">
                     <p className="nombre-apellido">{apellido}</p>
+                </li>
+                <li className="nav-item">
+                    <p className="nombre-apellido">{email}</p>
                 </li>
                 <Link to='/'>
                     <li className="nav-item">

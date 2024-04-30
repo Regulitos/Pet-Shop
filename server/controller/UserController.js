@@ -79,11 +79,11 @@ const controller = {
                 if (x.email === req.body.email && x.password === req.body.password) {
 
                     
-                    const { nombres, apellidos } = x;
+                    const { nombres, apellidos , email} = x;
                     // Leer los datos existentes del archivo JSON
                     const usuarios = leerDatos();
                     // Agregar los nuevos datos al arreglo
-                    usuarios.push({ nombres, apellidos });
+                    usuarios.push({ nombres, apellidos , email});
                     // Escribir los datos actualizados en el archivo JSON
                     escribirDatos(usuarios);
 
