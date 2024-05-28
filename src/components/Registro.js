@@ -75,17 +75,10 @@ function Registro() {
                 nameError: "Por favor, complete este campo."
             }));
             error = true;
-<<<<<<< HEAD
-        }else if(!regexNombre.test(formData.nombre)){
-            setErrors(prevErrors => ({
-                ...prevErrors,
-                nameError: "El nombre Insertado no es valido."
-=======
         } else if (!regexNombre.test(formData.nombre)) {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 nameError: "Nombre invalido, intentalo de nuevo."
->>>>>>> a419f5d553c522dd1fc484ba18d2fbded9698afc
             }));
             error = true;
         } else {
@@ -103,17 +96,10 @@ function Registro() {
                 lastError: "Por favor, complete este campo."
             }));
             error = true;
-<<<<<<< HEAD
-        }else if(!regexNombre.test(formData.apellido)){
-            setErrors(prevErrors => ({
-                ...prevErrors,
-                lastError: "El nombre Insertado no es valido."
-=======
         } else if (!regexNombre.test(formData.apellido)) {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 lastErrorError: "Nombre invalido, intentalo de nuevo."
->>>>>>> a419f5d553c522dd1fc484ba18d2fbded9698afc
             }));
             error = true;
         } else {
@@ -123,12 +109,8 @@ function Registro() {
             }));
         }
 
-<<<<<<< HEAD
-        const regexCorreo = /^[\w.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-=======
         const regexEmail = /^[\w.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
->>>>>>> a419f5d553c522dd1fc484ba18d2fbded9698afc
         //Validacion de correo
         console.log(formData.email);
         if (formData.email === "") {
