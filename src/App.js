@@ -1,5 +1,6 @@
 import Inicio from './components/Inicio';
 import {Routes, Route, HashRouter} from "react-router-dom";
+import React from 'react';
 import Registro from './components/Registro';
 import NotFound from './components/NotFound';
 import IniciarSesion from './components/IniciarSesion';

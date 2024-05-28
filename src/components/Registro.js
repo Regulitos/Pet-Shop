@@ -5,6 +5,9 @@ import colombia from "./colombia";
 
 
 function Registro() {
+    
+    let url = process.env.REACT_APP_ENVIRONMENT;
+    console.log(url);
     const [deptosIndex, setDeptosIndex] = useState(1);
     const form = useRef();
     const [formData, setFormData] = useState({
@@ -268,7 +271,16 @@ function Registro() {
         }
 
 
-        fetch("http://localhost:3001/registro-usuario", {
+        /*fetch("http://localhost:3001/registro-usuario", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify(formData),
+        })*/
+        console.log(url);
+        fetch(`${url}/registro-usuario`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
