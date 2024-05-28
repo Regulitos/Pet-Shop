@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.send("Saludando desde el BackEnd");
 });
 
-const user = require("./controller/UserController");
+const user = require("./controller/userController");
 app.use("/registro-usuario", user.register);
 app.use("/login", user.login);
 

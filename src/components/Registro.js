@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import Swal from "sweetalert2";
 import './registro.css';
+import colombia from "./colombia";
 
 function Registro() {
+    const [deptosIndex, setDeptosIndex] = useState(1);
+    const form = useRef();
     const [formData, setFormData] = useState({
         identificacion: "",
         nombre: "",
         apellido: "",
         email: "",
         direccion: "",
+        ciudad:"",
+        depto: "",
         telefono: "",
         fecha: "",
         password: "",
@@ -27,6 +33,8 @@ function Registro() {
         lastError: "",
         emailError: "",
         dirError: "",
+        deptoError: "",
+        ciudadError: "",
         telefonoError: "",
         passErr: "",
         repassErr: "",
@@ -66,10 +74,17 @@ function Registro() {
                 nameError: "Por favor, complete este campo."
             }));
             error = true;
+<<<<<<< HEAD
         }else if(!regexNombre.test(formData.nombre)){
             setErrors(prevErrors => ({
                 ...prevErrors,
                 nameError: "El nombre Insertado no es valido."
+=======
+        } else if (!regexNombre.test(formData.nombre)) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                nameError: "Nombre invalido, intentalo de nuevo."
+>>>>>>> a419f5d553c522dd1fc484ba18d2fbded9698afc
             }));
             error = true;
         } else {
@@ -87,10 +102,17 @@ function Registro() {
                 lastError: "Por favor, complete este campo."
             }));
             error = true;
+<<<<<<< HEAD
         }else if(!regexNombre.test(formData.apellido)){
             setErrors(prevErrors => ({
                 ...prevErrors,
                 lastError: "El nombre Insertado no es valido."
+=======
+        } else if (!regexNombre.test(formData.apellido)) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                lastErrorError: "Nombre invalido, intentalo de nuevo."
+>>>>>>> a419f5d553c522dd1fc484ba18d2fbded9698afc
             }));
             error = true;
         } else {
@@ -100,13 +122,24 @@ function Registro() {
             }));
         }
 
+<<<<<<< HEAD
         const regexCorreo = /^[\w.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+=======
+        const regexEmail = /^[\w.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+>>>>>>> a419f5d553c522dd1fc484ba18d2fbded9698afc
         //Validacion de correo
         console.log(formData.email);
         if (formData.email === "") {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 emailError: "Por favor, complete este campo."
+            }));
+            error = true;
+        } else if (!regexEmail.test(formData.email)) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                emailError: "Correo invalido, intentalo de nuevo."
             }));
             error = true;
         } else {
@@ -116,6 +149,8 @@ function Registro() {
             }));
         }
 
+        const regexDireccion = /^(?:[a-zA-Z0-9\s\.,#\-]+|Calle\s\d+\scon\scarrera\s\d+)$/;
+
         //Validacion de Direccion
         console.log(formData.direccion);
         if (formData.direccion === "") {
@@ -124,10 +159,45 @@ function Registro() {
                 dirError: "Por favor, complete este campo."
             }));
             error = true;
+        } else if (!regexDireccion.test(formData.direccion)) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                dirError: "Direccion invalida, intentelo de nuevo."
+            }));
+            error = true;
         } else {
             setErrors(prevErrors => ({
                 ...prevErrors,
                 dirError: "",
+            }));
+        }
+
+        //validacion de departamento
+        console.log(formData.depto);
+        if(formData.depto === "" || formData.depto === "Seleccione:") {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                deptoError: "Por favor, complete este campo."
+            }));
+            error = true;
+        } else{
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                deptoError: "",
+            }));
+        }
+
+        console.log(formData.ciudad);
+        if(formData.ciudad === "" || formData.ciudad === "Seleccione:") {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+               ciudadError: "Por favor, complete este campo."
+            }));
+            error = true;
+        } else{
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                ciudadError: "",
             }));
         }
 
@@ -161,35 +231,48 @@ function Registro() {
             }));
             error = true;
         } else {
-            setErrors(prevErrors => ({
-                ...prevErrors,
-                fechaError: "",
-            }));
+            const fechaNacimiento = new Date(formData.fecha);
+            const fechaActual = new Date();
+
+            const edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+            if (edad <= 16) {
+                setErrors(prevErrors => ({
+                    ...prevErrors,
+                    fechaError: "Debe ser mayor de 16 años para continuar."
+                }));
+                error = true;
+            } else {
+                setErrors(prevErrors => ({
+                    ...prevErrors,
+                    fechaError: "",
+                }));
+            }
         }
 
         //Validacion de Contraseña 
         console.log(formData.password);
         var regexp_password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/;
-        if(!regexp_password.test(formData.password)){
-            setErrors(prevErrors=>({
+        if (!regexp_password.test(formData.password)) {
+            setErrors(prevErrors => ({
                 ...prevErrors,
                 passErr: "Siga las instrucciones para la creacion de la contraseña."
             }));
             error = true;
-        }else if(formData.password===""){
-            setErrors(prevErrors=>({
+        } else if (formData.password === "") {
+            setErrors(prevErrors => ({
                 ...prevErrors,
                 passErr: "Por favor, complete este campo."
             }));
             error = true;
-        }else if(formData.password!==formData.repassword){
-            setErrors(prevErrors=>({
+        } else if (formData.password !== formData.repassword) {
+            setErrors(prevErrors => ({
                 ...prevErrors,
                 repassErr: "Las contraseñas no coinciden."
             }));
             error = true;
-        }else{
-            setErrors(prevErrors=>({
+        } else {
+            setErrors(prevErrors => ({
                 ...prevErrors,
                 passErr: "",
                 repassErr: "",
@@ -200,13 +283,76 @@ function Registro() {
         if (error) {
             return;
         }
-        alert("Datos enviados con exito");
-        console.log("Datos enviados:", formData);
+
+
+        fetch("http://localhost:3001/registro-usuario", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then((response) => {
+                console.log(response.status)
+                if (response.status === 200) {
+
+                    // alert("Usuario creado con éxito")
+                    Swal.fire({
+                        title: "Usuario creado con éxito",
+                        icon: "success",
+                    });
+                    form.current.reset();
+                    window.location.hash = "/inicio-sesion";
+                }
+                if (response.status === 400) {
+                    //alert(" + response.status)
+                    Swal.fire({
+                        title:
+                            "No fue posible crear el usuario porque ya existe el correo ingresado " +
+                            formData.email,
+                        icon: "warning",
+                    });
+                }
+            })
+            .catch((error) => {
+                //alert("No fue posible finalizar el proceso de registro por un error " + error)
+                Swal.fire({
+                    title:
+                        "No fue posible finalizar el proceso de registro por un error interno del servidor ",
+                    icon: "error",
+                });
+            });
     };
+
+    const handleDepto = (e) => {
+        const opcion = e.target.value;
+        console.log("opcion -->>>", opcion);
+        setDeptosIndex(opcion);
+        console.log("DeptosIndex -->>> ", opcion);
+
+        const selectedDepartamento = colombia[opcion] && colombia[opcion].departamento;
+        console.log(selectedDepartamento);
+    
+        // Actualizar el estado del formulario con el departamento seleccionado
+        setFormData({ ...formData, depto: selectedDepartamento });
+    };
+    useEffect(() => {
+
+    }, [deptosIndex]);
+
+    const handleCiudad = (e) => {
+        const opcion = e.target.value;
+       
+        setFormData({ ...formData, ciudad: opcion });
+        console.log(opcion);
+    };
+
+
 
     return (
         <div className="registro-container">
-            <form className="registro-form">
+            <form className="registro-form" ref={form}>
                 <h2>Registro</h2>
                 <div className="column-left">
                     <div className="form-group">
@@ -233,6 +379,37 @@ function Registro() {
                         <label htmlFor="direccion">Direccion:</label>
                         <input type="text" id="direccion" name="direccion" placeholder="Ingrese su Direccion" value={formData.direccion} onChange={handleChange} />
                         <p className="error">{errors.dirError}</p>
+                    </div>
+
+                    <div className="row">
+                        <div className="form-outline ">
+                            <label className="form-label" htmlFor="form3Example3cg">
+                                <strong>Departamento</strong>
+                            </label>
+                            <br></br>
+                            <select name="deptoresidencia" onClick={handleDepto}>
+                                <option>Seleccione:</option>
+                                {colombia.map((item, i) => (
+                                    <option key={i} value={i}>
+                                        {item.departamento}
+                                    </option>
+                                ))}
+                            </select>
+                            <p className="error">{errors.deptoError}</p>
+                        </div>
+                        <div className="form-outline ">
+                            <label className="form-label" htmlFor="form3Example3cg">
+                                <strong>Municipio</strong>
+                            </label>
+                            <br></br>
+                            <select name="municipioresidencia" onClick={handleCiudad}>
+                                <option>Seleccione:</option>
+                                {colombia[deptosIndex] && colombia[deptosIndex].ciudades.map((item, i) => (
+                                    <option key={i}>{item}</option>
+                                ))}
+                            </select>
+                            <p className="error">{errors.ciudadError}</p>
+                        </div>
                     </div>
                 </div>
                 <div className="column-right">

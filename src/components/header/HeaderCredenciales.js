@@ -1,14 +1,10 @@
 import React from 'react'
 import './header.css';
-import LoginIcon from '@mui/icons-material/Login';
-import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import SourceIcon from '@mui/icons-material/Source';
 import HomeIcon from '@mui/icons-material/Home';
 import ThreePIcon from '@mui/icons-material/ThreeP';
 import SearchIcon from '@mui/icons-material/Search';
-import { Link } from 'react-router-dom';
-
 
 function Header() {
     return (
@@ -34,18 +30,6 @@ function Header() {
                                 <ContactsIcon />
                                 <a className="nav-link" href="#">Contacto</a>
                             </li>
-                            <Link to='/registro'>
-                                <li className="nav-item">
-                                    <PersonAddAlt1Icon />
-                                    <a className="nav-link" href="#">Registrarse</a>
-                                </li>
-                            </Link>
-                            <Link to='/inicio-sesion'>
-                                <li className="nav-item">
-                                    <LoginIcon />
-                                    <a className="nav-link" href="#">Iniciar Sesion</a>
-                                </li>
-                            </Link>
                         </ul>
                         <form className="d-flex" role="search">
                             < SearchIcon className='searchIcon' />
