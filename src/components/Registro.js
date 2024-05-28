@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import './registro.css';
 import colombia from "./colombia";
 
+
 function Registro() {
     const [deptosIndex, setDeptosIndex] = useState(1);
     const form = useRef();
@@ -366,7 +367,7 @@ function Registro() {
                         <p className="error">{errors.nameError}</p>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="apellido">Apellido:</label>
+                        <label htmlFor="lastname">Apellido:</label>
                         <input type="text" id="lastname" name="apellido" placeholder="Ingrese su Apellido" value={formData.apellido} onChange={handleChange} />
                         <p className="error">{errors.lastError}</p>
                     </div>
@@ -383,11 +384,11 @@ function Registro() {
 
                     <div className="row">
                         <div className="form-outline ">
-                            <label className="form-label" htmlFor="form3Example3cg">
+                            <label className="form-label" htmlFor="depto">
                                 <strong>Departamento</strong>
                             </label>
                             <br></br>
-                            <select name="deptoresidencia" onClick={handleDepto}>
+                            <select name="deptoresidencia" id="depto" onClick={handleDepto}>
                                 <option>Seleccione:</option>
                                 {colombia.map((item, i) => (
                                     <option key={i} value={i}>
@@ -398,11 +399,11 @@ function Registro() {
                             <p className="error">{errors.deptoError}</p>
                         </div>
                         <div className="form-outline ">
-                            <label className="form-label" htmlFor="form3Example3cg">
+                            <label className="form-label" htmlFor="munRes">
                                 <strong>Municipio</strong>
                             </label>
                             <br></br>
-                            <select name="municipioresidencia" onClick={handleCiudad}>
+                            <select name="municipioresidencia" id="munRes" onClick={handleCiudad}>
                                 <option>Seleccione:</option>
                                 {colombia[deptosIndex] && colombia[deptosIndex].ciudades.map((item, i) => (
                                     <option key={i}>{item}</option>

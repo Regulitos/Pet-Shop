@@ -1,0 +1,4 @@
+body{
+    background: linear-gradient(to bottom,aquamarine, rgb(34, 240, 255), rgb(205, 161, 230),white);
+    transition: background 1s ease-in-out;
+}

@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d08b005e.css",
+    "main.js": "/static/js/main.7fb397b6.js",
+    "static/media/imagen4.webp": "/static/media/imagen4.dcc2cc756eec11c4f108.webp",
+    "static/media/imagen7.jpg": "/static/media/imagen7.5c92719c6174671a7ec0.jpg",
+    "static/media/chihuahua.jpg": "/static/media/chihuahua.a0ab1f84c1f05782289d.jpg",
+    "static/media/jackRussel.jpg": "/static/media/jackRussel.2f28255a0deec6f6ee4d.jpg",
+    "static/media/pomerania.jpg": "/static/media/pomerania.cf46c84d791e55e33d6b.jpg",
+    "static/media/imagen2.jpg": "/static/media/imagen2.6f35aa57b7604a2ba39e.jpg",
+    "static/media/imagen1.jpg": "/static/media/imagen1.804c7e4fece0dd584d5d.jpg",
+    "static/media/bichonMaltes.jpg": "/static/media/bichonMaltes.ffdc959318ee8fab06cc.jpg",
+    "static/media/caniche.jpg": "/static/media/caniche.4799724adbfeb89b40a1.jpg",
+    "static/media/imagen5.jpg": "/static/media/imagen5.03e74bbc706ec6e730e6.jpg",
+    "static/media/beagle.jpg": "/static/media/beagle.5eef0b15eece0c686237.jpg",
+    "static/media/bulldogFrances.jpg": "/static/media/bulldogFrances.905d95a153a7f854552f.jpg",
+    "static/media/pekines.jpg": "/static/media/pekines.3daad9d8747026c5931f.jpg",
+    "static/media/ratTerrier.jpg": "/static/media/ratTerrier.82cbe5adc745abbf4ad3.jpg",
+    "static/media/foxTerrier.jpg": "/static/media/foxTerrier.1cd11a447461b4f039ad.jpg",
+    "static/media/imagen6.avif": "/static/media/imagen6.95841685d9592860dbe2.avif",
+    "static/media/imagen3.jfif": "/static/media/imagen3.a3489b472d23ced325d9.jfif",
+    "index.html": "/index.html",
+    "main.d08b005e.css.map": "/static/css/main.d08b005e.css.map",
+    "main.7fb397b6.js.map": "/static/js/main.7fb397b6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d08b005e.css",
+    "static/js/main.7fb397b6.js"
+  ]
+}

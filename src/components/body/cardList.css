@@ -1,0 +1,9 @@
+.button-container {
+    text-align: center; /* Centra el botón */
+}
+
+.button-container button {
+    width: auto; /* Ancho automático basado en el contenido */
+    padding: 10px 20px; /* Ajusta el relleno según sea necesario */
+    margin: 0 auto; /* Centra horizontalmente el botón */
+}
