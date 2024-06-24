@@ -5,28 +5,27 @@ import './cardList.css';
 
 function CardList() {
     const [carrito, setCarrito] = useState([]);
+    
     const agregarAlCarrito = (item) => {
         setCarrito([...carrito, item]);
     };
 
-    // Función para calcular el total del carrito
+    const eliminarDelCarrito = (id) => {
+        setCarrito(carrito.filter(item => item.id !== id));
+    };
+
     const calcularTotal = () => {
         let total = 0;
         carrito.forEach(item => {
-            // Reemplazar los caracteres especiales antes de convertir el precio en un número
-            console.log(item.precio);
             const precioNumerico = parseInt(item.precio.replace(/[$.]/g, ''));
             total += precioNumerico;
-            console.log(precioNumerico);
         });
         return total;
     };
 
-    const cards = data.map(items => {
-        return (
-            <Cards key={items.id} items={items} agregarAlCarrito={agregarAlCarrito} />
-        );
-    });
+    const cards = data.map(items => (
+        <Cards key={items.id} items={items} agregarAlCarrito={agregarAlCarrito} />
+    ));
 
     return (
         <div>
@@ -35,6 +34,19 @@ function CardList() {
             </div>
             <div className="button-container">
                 <button onClick={() => setCarrito([])}>Limpiar Carrito</button>
+            </div>
+            <div className='carrito'>
+                {carrito.map(item => (
+                    <div key={item.id} className='carrito-item'>
+                        <img src={item.image} alt='logo' />
+                        <div>
+                            <h5>{item.specie}</h5>
+                            <p>{item.description}</p>
+                            <p className="precio">{item.precio}</p>
+                            <button onClick={() => eliminarDelCarrito(item.id)}>Eliminar</button>
+                        </div>
+                    </div>
+                ))}
             </div>
             <p>Total del carrito: ${calcularTotal().toFixed(0)}</p>
         </div>
