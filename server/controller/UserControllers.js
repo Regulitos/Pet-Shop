@@ -84,16 +84,16 @@ const controller = {
 
     const usuarioNuevo = {
       identificacion: req.body.identificacion,
-      nombres: req.body.nombre,
-      apellidos: req.body.apellido,
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
       email: req.body.email,
       direccion: req.body.direccion,
       ciudad: req.body.ciudad,
-      departamento: req.body.depto,
+      depto: req.body.depto,
       telefono: req.body.telefono,
-      fechaNacimiento: req.body.fecha,
+      fecha: req.body.fecha,
       password: req.body.password,
-      fecha_creacion: new Date()
+      creacion: new Date()
     };
 
     // Verificar si el usuario ya existe en la base de datos
