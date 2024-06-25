@@ -40,7 +40,7 @@ app.get("/todos-los-Usuarios",(req,res) => {
 })
 
 const user = require("./controller/UserControllers");
-app.post("/registro-usuario", user.register);
+app.post("/registro-usuario", user.registerBD);
 //app.post("/login", user.login);
 
 const PORT = 3001;
