@@ -97,7 +97,7 @@ const controller = {
     };
 
     // Verificar si el usuario ya existe en la base de datos
-    connection.query('SELECT * FROM sql10715864.personas WHERE email = ?', [usuarioNuevo.email], (error, results) => {
+    connection.query('SELECT * FROM freedb_registross.personas WHERE email = ?', [usuarioNuevo.email], (error, results) => {
       if (error) {
         console.error(error);
         res.status(500).send('Error interno del servidor');
@@ -108,7 +108,7 @@ const controller = {
         res.status(400).send('Usuario ya existe en la Base de Datos');
       } else {
         // Insertar el nuevo usuario en la base de datos
-        connection.query('INSERT INTO sql10715864.personas SET ?', usuarioNuevo, (error, results) => {
+        connection.query('INSERT INTO freedb_registross.personas SET ?', usuarioNuevo, (error, results) => {
           if (error) {
             console.error(error);
             res.status(500).send('Error interno del servidor');

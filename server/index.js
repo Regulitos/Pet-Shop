@@ -32,7 +32,7 @@ app.get("/todos-los-Usuarios",(req,res) => {
   conexion.connect(function(err){
     if(err) throw err;
 
-    conexion.query("SELECT * FROM sql10715864.personas",function(err,result,fields){
+    conexion.query("SELECT * FROM personas",function(err,result,fields){
       if(err) throw err;
       res.send(result);
     })
