@@ -10,7 +10,7 @@ function App() {
       <div className="App">
         <Credencial />
         <Header />
-        <Carousel />
+        <Carousel />        
         <CardList />
         <Footer />
       </div>

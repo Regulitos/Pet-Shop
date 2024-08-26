@@ -14,12 +14,15 @@
 .carousel {
     margin: 2% auto !important; /* Centra el carrusel horizontalmente y agrega un pequeño espacio en la parte superior e inferior */
     background-color: none !important; /* Elimina el color de fondo */
+    margin-left: 100px !important; 
+    margin-right: 100px !important;
 }
 
 .carousel-inner {
     position: relative;
     height: 600px; /* Limita la altura del carrusel */
 }
+
 
 /* Media queries para ajustar el tamaño del carrusel en dispositivos más pequeños */
 @media (max-width: 768px) {
